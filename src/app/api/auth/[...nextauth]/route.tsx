@@ -57,9 +57,7 @@ const authOptions: NextAuthOptions = {
   callbacks: {
     async signIn({ account, profile }) {
       const provider = account?.provider;
-      console.log(account, profile)
       if (provider === 'google') {
-        console.log("google")
         const result =  await handleGoogleSignIn(account, profile);
         
         return result;

@@ -2,7 +2,7 @@
 import prisma from "@/lib/prisma";
 
 export async function createTodo(props: any) {
-  console.log(props);
+  
   const result = await prisma.todo.create({
     data: {
      
@@ -22,7 +22,33 @@ export async function getTodos(props: any) {
     where: {
       userId: props,
     },
+    take: 10,
   });
-  console.log(result);
+  return result;
+}
+
+export async function deleteTodo(props: any) {
+  const result = await prisma.todo.delete({
+    where: {
+      id: props,
+    },
+  });
+  return result;
+}
+
+export async function toggleTodo(props: any) {
+  const todo = await prisma.todo.findUnique({
+    where: {
+      id: props,
+    },
+  });
+  const result = await prisma.todo.update({
+    where: {
+      id: props,
+    },
+    data: {
+      completed: !todo?.completed,
+    },
+  });
   return result;
 }

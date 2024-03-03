@@ -8,10 +8,13 @@ export const LoadingScreen = ({ started, setStarted }: { started: boolean, setSt
   useEffect(() => {
     if (progress === 100) {
       setTimeout(() => {
-        setStarted(true);
-      }, 500);
+        setTimeout(() => {
+          setStarted(true);
+        }, 250);
+      });
     }
   }, [progress, setStarted]);
+
 
   return (
     <div

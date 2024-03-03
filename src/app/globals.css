@@ -51,3 +51,9 @@ body {
   background-position: -100% 0;
 }
 
+.flash-orange {
+  animation: flash 3s linear infinite;
+  background-image: linear-gradient(to right, transparent, #5a440c, transparent);
+  background-size: 200% 100%;
+  background-position: -100% 0;
+}
