@@ -34,9 +34,9 @@ export default function Tabs(props:any) {
                 </div>
                 <div className = "py-8">
                 {activeTab === "Dashboard" && <Dashboard props ={props?.props} />}
-                {activeTab === "Journal" && <Journal props ={props?.props}/>}
-                {activeTab === "Pomodoro" && <Pomodoro props ={props?.props}/>}
-                {activeTab === "TedEd" && <TedEd props ={props?.props}/>}
+                {activeTab === "Journal" && <Journal />}
+                {activeTab === "Pomodoro" && <Pomodoro/>}
+                {activeTab === "TedEd" && <TedEd/>}
                 </div>
                 
             </div>
