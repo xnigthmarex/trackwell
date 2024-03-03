@@ -57,7 +57,9 @@ const authOptions: NextAuthOptions = {
   callbacks: {
     async signIn({ account, profile }) {
       const provider = account?.provider;
+      console.log(account, profile)
       if (provider === 'google') {
+        console.log("google")
         const result =  await handleGoogleSignIn(account, profile);
         
         return result;
@@ -89,4 +91,4 @@ const authOptions: NextAuthOptions = {
 };
 
 const handler = NextAuth(authOptions);
-export { handler as GET, handler as POST, authOptions };
+export { handler as GET, handler as POST };
