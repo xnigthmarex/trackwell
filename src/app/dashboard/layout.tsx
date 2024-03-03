@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Victor_Mono } from "next/font/google";
-import "./globals.css";
-import Providers from "@/components/SessionProviders";
+import "@/app/globals.css";
 
-const inter = Victor_Mono({ subsets: ["latin"] });
+const vc = Victor_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,13 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-    
-      <Providers>
-        
-      <body className={inter.className}>{children}</body>
+      <>
+      <body className={vc.className}>{children}</body>
 
-      </Providers>
-    </html>
+      </>
   );
 }

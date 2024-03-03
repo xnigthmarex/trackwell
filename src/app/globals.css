@@ -2,32 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'Victor_Mono';
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.glow-text {
+  text-shadow: 0 0 20px rgba(0, 150, 255, 1), 
+               0 0 40px rgba(0, 150, 255, 1),
+               0 0 60px rgba(0, 150, 255, 1),
+               0 0 80px rgba(0, 150, 255, 1);
+}
+
+.glow-tabs {
+  text-shadow: 0 0 20px rgba(15, 97, 12, 0.5), 
+               0 0 20px rgba(25, 94, 7, 1),
+               0 0 60px rgba(25, 94, 7, 1),
+               0 0 80px rgba(25, 94, 7, 1);
+}
+
+@keyframes flash {
+  0% {
+    background-position: -100% 0;
+  }
+  
+  100% {
+    background-position: 100% 0;
   }
 }
+
+.flash-red {
+  animation: flash 3s linear infinite;
+  background-image: linear-gradient(to right, transparent, #ab0707, transparent);
+  background-size: 200% 100%;
+  background-position: -100% 0;
+}
+
+.flash-green {
+  animation: flash 3s linear infinite;
+  background-image: linear-gradient(to right, transparent, #0e7e0e, transparent);
+  background-size: 200% 100%;
+  background-position: -100% 0;
+}
+
+.flash-purple {
+  animation: flash 3s linear infinite;
+  background-image: linear-gradient(to right, transparent, #7e0e7e, transparent);
+  background-size: 200% 100%;
+  background-position: -100% 0;
+}
+
