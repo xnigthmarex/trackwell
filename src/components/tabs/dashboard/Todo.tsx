@@ -21,12 +21,10 @@ export default function Todo(props: any) {
     const [loading, setLoading] = useState(false);
     const [addingTodo, setAddingTodo] = useState(false);
 
-    if (props ===  null) {
-        return null;
-    }
+    
 
     useEffect(() => {
-        if (props.props.user) { 
+        
             setLoading(true); 
             getTodos(props.props.user.id)
                 .then((result: Todo[]) => {
@@ -38,7 +36,7 @@ export default function Todo(props: any) {
                 .finally(() => {
                     setLoading(false); 
                 });
-        }
+        
     }, [props.props.user]);
 
     
