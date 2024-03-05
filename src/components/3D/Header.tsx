@@ -34,7 +34,7 @@ const Header = (props: any) => {
   return (
     <Html style={{ position: "absolute", ...tabsPosition, color: "white" }}>
       <div className="h-screen w-screen font-mono ">
-        <div className="absolute grid grid-cols-3 w-screen pb-1 border-b-2 border-blue-400">
+        <div className="absolute grid grid-cols-3 w-screen pb-.5 lg:pb-1 border-b-2 border-blue-400">
           <h1 className="text-sm lg:text-3xl col-start-1 flex items-center justify-start text-text-blue-200 ml-3 glow-text font-extrabold">
             <img className="w-12 h-10 mr-2  rounded-lg" src="/logo.jpg" alt="logo" />
             TRACKWELL
@@ -46,7 +46,7 @@ const Header = (props: any) => {
             <h1 className="text-3sm lg:text-3xl">
               Welcome {props?.props?.user?.name}
             </h1>
-            <button className="ml-0 p-0 lg:ml-1 lg:p-1.5 rounded-md bg-red-500" onClick={handleSignOut}>
+            <button className=" text-xs lg:text-lg ml-0 p-0 lg:ml-1 lg:p-1.5 rounded-md bg-red-500" onClick={handleSignOut}>
               SignOut
             </button>
           </div>
