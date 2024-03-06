@@ -1,4 +1,5 @@
 import Todo from "./Todo";
+import BasicDateCalendar from "./calendar";
 
 export default function Dashboard(props: any) {
     const user = props?.props?.user;
@@ -10,12 +11,11 @@ export default function Dashboard(props: any) {
                     {user && (
                         <div className="w-full">
                             <Todo props={props?.props} />
+                            <BasicDateCalendar />
                         </div>
                     )}
                 </div>
-                <div className="col-span-2 items-center flex justify-center">
-                    
-                </div>
+                
             </div>
         </div>
     );
