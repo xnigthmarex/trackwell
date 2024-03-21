@@ -1,16 +1,19 @@
-import * as React from 'react';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
-import { makeStyles } from '@mui/material';
 
+import { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+
+type ValuePiece = Date | null;
+
+type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 export default function BasicDateCalendar() {
+  const [value, onChange] = useState<Value>(new Date());
+
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DateCalendar 
-      className='color: red,
-      color: white'/>
-    </LocalizationProvider>
+    <div>
+      <Calendar onChange={onChange} value={value} />
+    </div>
   );
 }
+
