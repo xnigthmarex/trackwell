@@ -38,7 +38,7 @@ export default function Journal(props: any) {
         update_journal(updatedJournal)
             .then((result) => {
                 setSelectedJournal(result);
-                fetchJournals(); // Fetch journals again after updating
+                fetchJournals(); 
             })
             .catch((error) => {
                 console.error("Error updating journal:", error);

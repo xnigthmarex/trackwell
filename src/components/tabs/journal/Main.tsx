@@ -40,7 +40,7 @@ export default function Main({ selectedJournal, onJournalChange }: MainProps) {
 
     return (
         <div>
-            <div className="flex items-center justify-between p-2 border-r-2 border-l-2 border-t-2">
+            <div className="flex items-center rounded-lg justify-between p-2 border-r-2 border-l-2 border-t-2">
                 <h1 className="text-xl font-bold">{heading}</h1>
                 <button 
                     className="ml-auto bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700" 
@@ -50,7 +50,7 @@ export default function Main({ selectedJournal, onJournalChange }: MainProps) {
                 </button>
             </div>
             <textarea
-                className="custom-textarea border-2 bg-transparent w-full h-[84vh] text-xl font-bold resize-none overflow-auto p-2"
+                className="custom-textarea rounded-lg border-2 bg-transparent w-full h-[84vh] text-xl font-bold resize-none overflow-auto p-2"
                 value={content}
                 onChange={handleContentChange}
             ></textarea>

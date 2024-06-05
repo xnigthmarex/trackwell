@@ -116,7 +116,7 @@ export default function Todo(props: any) {
             todos.map((todo: Todo) => (
                 <div 
                     key={todo.id} 
-                    className="flex items-center justify-between px-4 py-1.5 border-2 border-orange-800 rounded mt-2 flash-orange"
+                    className="flex items-center justify-between px-2 py-1.5 border-2 border-orange-800 rounded mt-2 flash-orange"
                 >
                     <div className="flex items-center">
                         <input 

@@ -1,6 +1,6 @@
 "use server"
 import prisma from "@/lib/prisma"
-
+  
 export async function get_journals(props:any) {
     
     const journals = await prisma.journal.findMany({
@@ -13,7 +13,6 @@ export async function get_journals(props:any) {
 }
 
 export async function create_journal(props:any) {
-    //connect user
     const journal = await prisma.journal.create({
         data: {
             title: props.title,

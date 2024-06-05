@@ -28,7 +28,7 @@ model Todo {
 }
 
 model Journal {
-  id        String   @id
+  id        String   @id @default(uuid())
   title     String
   content   String
   userId    String
