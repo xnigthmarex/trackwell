@@ -9,14 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.15.12",
-    "@mui/styled-engine-sc": "^6.0.0-alpha.17",
-    "@mui/x-date-pickers": "^6.19.6",
     "@prisma/client": "^5.10.2",
     "@react-three/drei": "^9.88.11",
-    "@react-three/fiber": "^8.15.10",
+    "@react-three/fiber": "^8.16.8",
     "@react-three/postprocessing": "^2.15.13",
     "@types/three": "^0.162.0",
     "bcrypt": "^5.1.1",

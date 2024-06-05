@@ -57,3 +57,10 @@ body {
   background-size: 200% 100%;
   background-position: -100% 0;
 }
+
+.flash-blue {
+  animation: flash 3s linear infinite;
+  background-image: linear-gradient(to right, transparent, #0d18bb, transparent);
+  background-size: 200% 100%;
+  background-position: -100% 0;
+}

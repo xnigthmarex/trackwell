@@ -13,18 +13,19 @@ export default function Tabs(props:any) {
     const [activeTab, setActiveTab] = useState("Dashboard"); // Initial active tab
 
     const tabsPosition = {
-        top: -size.height / 2,
+        top: -size.height / 1.82,
         left: -size.width / 2,
     };
 
-    // Function to handle tab click
     const handleTabClick = (tabName: React.SetStateAction<string>) => {
         setActiveTab(tabName);
     };
 
+    console.log(props.props);
+
     return (
-        <Html className="mt-12" style={{ position: "absolute", ...tabsPosition, color: "white" }}>
-            <div className="h-screen w-full ">
+        <Html className="pt-24" style={{ position: "absolute", ...tabsPosition, color: "white" }}>
+            <div className="w-screen">
                 <div className="absolute grid grid-cols-4 w-screen border-b-2 border-blue-400 mb-4">
                 <button className={`text-xs lg:text-xl bg-inherit text-white glow-text font-extrabold ${activeTab === "Dashboard" ? "flash-red" : ""} `} onClick={() => handleTabClick("Dashboard")}>Dashboard</button>
                 <button className={`text-xs lg:text-xl bg-inherit text-white glow-text font-extrabold ${activeTab === "Journal" ? "flash-red" : ""} `} onClick={() => handleTabClick("Journal")}>Journal</button>
@@ -32,9 +33,9 @@ export default function Tabs(props:any) {
                 <button className={`text-xs lg:text-xl bg-inherit text-white glow-text font-extrabold ${activeTab === "TedEd" ? "flash-red" : ""} `} onClick={() => handleTabClick("TedEd")}>TedEd</button>
  
                 </div>
-                <div className = "py-8">
+                <div className = "pt-8">
                 {activeTab === "Dashboard" && <Dashboard props ={props?.props} />}
-                {activeTab === "Journal" && <Journal />}
+                {activeTab === "Journal" && <Journal props = {props?.props}/>}
                 {activeTab === "Pomodoro" && <Pomodoro/>}
                 {activeTab === "TedEd" && <TedEd/>}
                 </div>

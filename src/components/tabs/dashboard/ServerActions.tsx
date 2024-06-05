@@ -22,7 +22,7 @@ export async function getTodos(props: any) {
     where: {
       userId: props,
     },
-    take: 10,
+    take: 15,
   });
   return result;
 }

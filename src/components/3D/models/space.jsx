@@ -51,7 +51,7 @@ export default function Galaxy(props) {
 
   useFrame(({ clock }) => {
     ref.current.rotation.z = clock.getElapsedTime() / 5;
-    ref.current.scale.setScalar(Math.sin(clock.getElapsedTime() / 4) + 1.4);
+    ref.current.scale.setScalar(Math.sin(clock.getElapsedTime() / 10) + 1.4);
   })
 
  
