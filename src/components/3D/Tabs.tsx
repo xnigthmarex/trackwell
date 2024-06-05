@@ -21,7 +21,6 @@ export default function Tabs(props:any) {
         setActiveTab(tabName);
     };
 
-    console.log(props.props);
 
     return (
         <Html className="pt-24" style={{ position: "absolute", ...tabsPosition, color: "white" }}>

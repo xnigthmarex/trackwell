@@ -7,38 +7,36 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id       String    @id @default(uuid())
+  name     String
+  email    String    @unique
+  password String?
+  image    String    @default("/default.jpg")
+  type     UserType
+  Journal  Journal[]
+  todos    Todo[]
+}
+
+model Todo {
+  id        String   @id @default(uuid())
+  content   String
+  completed Boolean  @default(false)
+  userId    String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Journal {
+  id        String   @id
+  title     String
+  content   String
+  userId    String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+}
+
 enum UserType {
   LOCAL
   GOOGLE
 }
-
-model User {
-  id            String        @id @default(uuid()) // UUID as default
-  name          String       
-  email         String        @unique
-  password      String?       // Hashed password, optional for Google users
-  image         String        @default("/default.jpg") // Default image
-  type          UserType      // Enum to indicate the type of user
-  todos         Todo[]
-  journals      Journal[]
-}
-
-
-model Todo{
-  id            String        @id @default(uuid()) // UUID as default
-  content       String  
-  completed     Boolean       @default(false)
-  user          User          @relation(fields: [userId], references: [id])
-  userId        String
-  createdAt     DateTime      @default(now())
-}
-
-model Journal{
-  id            String        @id @default(uuid()) // UUID as default
-  title         String
-  content       String?
-  user          User          @relation(fields: [userId], references: [id])
-  userId        String
-  createdAt     DateTime      @default(now())
-}
-

@@ -30,6 +30,11 @@ body {
   }
 }
 
+.custom-textarea:focus {
+  outline: none; /* Remove outline on focus */
+  background-color: transparent; /* Maintain transparent background on focus */
+}
+
 .flash-red {
   animation: flash 3s linear infinite;
   background-image: linear-gradient(to right, transparent, #ab0707, transparent);
@@ -53,7 +58,7 @@ body {
 
 .flash-orange {
   animation: flash 3s linear infinite;
-  background-image: linear-gradient(to right, transparent, #5a440c, transparent);
+  background-image: linear-gradient(to right, transparent, #a35c00, transparent);
   background-size: 200% 100%;
   background-position: -100% 0;
 }
